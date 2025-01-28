@@ -9,14 +9,13 @@ const profileRoutes = require('./routes/profileRoutes');
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
+// CORS Configuration
+const corsOrigin = process.env.CORS_ORIGIN || 'https://derananews-web.vercel.app/'; 
 app.use(cors({
-    origin: 'https://derananews-web.vercel.app/',  // replace with your frontend URL
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type'],
-  }));
-    // Can customize CORS if needed, see above
-app.use(express.json());  // Parse incoming JSON requests
+  origin: corsOrigin, 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'], // Include Authorization header
+}));
 
 // Connect to MongoDB
 connectDB();
