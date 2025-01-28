@@ -1,10 +1,10 @@
 /* eslint-disable @typescript-eslint/no-require-imports */
 const mongoose = require('mongoose');
-require('dotenv').config();
+
 
 const connectDB = async () => {
   try {
-    await mongoose.connect(process.env.MONGODB_URI);
+    await mongoose.connect("mongodb+srv://root:root@cluster0.9laow.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
     console.log('MongoDB connected');
   } catch (error) {
     console.error(error);
