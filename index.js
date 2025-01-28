@@ -12,7 +12,7 @@ const PORT = process.env.PORT || 5000;
 // CORS Configuration
 const corsOrigin = process.env.CORS_ORIGIN || 'https://derananews-web.vercel.app/'; 
 app.use(cors({
-  origin: corsOrigin, 
+  origin: "*", 
   methods: ['GET', 'POST', 'PUT', 'DELETE'],
   allowedHeaders: ['Content-Type', 'Authorization'], // Include Authorization header
 }));
